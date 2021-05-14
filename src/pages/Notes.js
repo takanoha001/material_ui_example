@@ -1,9 +1,10 @@
 import React from "react";
-import { Typography } from "@material-ui/core";
+import { Button, Typography, Container } from "@material-ui/core";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
 
 export default function Notes() {
   return (
-    <div>
+    <Container>
       <Typography
         variant="h6"
         component="h2"
@@ -12,6 +13,21 @@ export default function Notes() {
       >
         Create a New Note{" "}
       </Typography>
-    </div>
+
+      {/* <Button type="submit">Submit</Button>
+      <ButtonGroup color="secondary" variant="container">
+        <Button>One</Button>
+        <Button>two</Button>
+      </ButtonGroup> */}
+
+      <Button
+        onClick={() => console.log("clicked me")}
+        type="submit"
+        color="secondary"
+        variant="contained"
+      >
+        Submit{" "}
+      </Button>
+    </Container>
   );
 }
