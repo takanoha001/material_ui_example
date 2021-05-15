@@ -4,7 +4,7 @@ import Create from "./pages/Create";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import { purple } from "@material-ui/core/colors";
 
-const customTheme = createMuiTheme({
+const theme = createMuiTheme({
   palette: {
     primary: {
       main: "#fefefe",
@@ -22,7 +22,7 @@ const customTheme = createMuiTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={customTheme}>
+    <ThemeProvider theme={theme}>
       <Router>
         <Switch>
           <Route exact path="/">
