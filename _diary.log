@@ -1,0 +1,31 @@
+
+
+
+custom theme
+
+button, font, color 
+
+1. default theme
+https://material-ui.com/customization/default-theme/#default-theme
+
+2.  overrides the current with user values.
+pallete and typography
+primary, secondary
+typography -> fontFamily -> Roboto
+https://fonts.google.com/specimen/Quicksand#standard-styles
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+color 
+https://material-ui.com/customization/color/#color
+
+
+
+Note:
+- make sure to add  "const customTheme = createMuiTheme({" in parent
+- make sure to add 
+
+
+
+
+
+

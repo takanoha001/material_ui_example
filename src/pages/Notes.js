@@ -7,17 +7,17 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
   //css package
-  btn: {
-    fontSize: 20,
-    backgroundColor: "violet",
-    "&:hover": {
-      backgroundColor: "blue",
-    },
-  },
-  title: {
-    textDecoration: "underline",
-    marginBottom: 10,
-  },
+  // btn: {
+  //   fontSize: 20,
+  //   backgroundColor: "violet",
+  //   "&:hover": {
+  //     backgroundColor: "red",
+  //   },
+  // },
+  // title: {
+  //   textDecoration: "underline",
+  //   marginBottom: 10,
+  // },
 });
 
 export default function Notes() {
@@ -34,6 +34,17 @@ export default function Notes() {
       >
         Create a New Note{" "}
       </Typography>
+      <Button
+        className={classes.btn}
+        onClick={() => console.log("clicked me")}
+        type="submit"
+        color="primary"
+        variant="contained"
+        endIcon={<KeyboardArrowRightOutlined />}
+      >
+        Submit{" "}
+      </Button>
+
       <Button
         className={classes.btn}
         onClick={() => console.log("clicked me")}
