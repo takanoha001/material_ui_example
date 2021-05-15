@@ -4,8 +4,12 @@ import { Button, Typography, Container } from "@material-ui/core";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import AcUnitOutlinedIcon from "@material-ui/icons/AcUnitOutlined";
 import { Send, KeyboardArrowRightOutlined } from "@material-ui/icons";
-import { makeStyles } from "@material-ui/core";
+import { FormControlLabel, makeStyles } from "@material-ui/core";
 import TextField from "@material-ui/core/TextField";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormLabel from "@material-ui/core/FormLabel";
+import FormControl from "@material-ui/core/FormControl";
 
 const useStyles = makeStyles({
   //css package
@@ -33,6 +37,7 @@ export default function Notes() {
   const [details, setDetails] = useState("");
   const [titleError, setTitleError] = useState(false);
   const [detailsError, setDetailsError] = useState(false);
+  const [category, setCategory] = useState("todos");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,7 +52,7 @@ export default function Notes() {
     }
 
     if (title && details) {
-      console.log(title, details);
+      console.log(title, details, category);
     }
   };
 
@@ -85,6 +90,26 @@ export default function Notes() {
           required
           error={detailsError}
         />
+
+        <FormControl className={classes.field}>
+          <FormLabel> Note Category</FormLabel>
+          <RadioGroup
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            {/* <Radio value="hello " />
+          <Radio value="good bye " /> */}
+            <FormControlLabel value="money" control={<Radio />} label="Money" />
+            <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+            <FormControlLabel
+              value="reminders"
+              control={<Radio />}
+              label="Reminders"
+            />
+            <FormControlLabel value="work" control={<Radio />} label="Work" />
+          </RadioGroup>
+        </FormControl>
+
         <Button
           className={classes.btn}
           type="submit"
